@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="seller"> <!-- ="addproduct"> -->
+<head>
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<script src="../js/angular.min.js"></script>
+<script src="../js/angular-route.js"></script>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/seller.js"></script>
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+
+
+
+</head>
+
+<body ng-controller="SellerController" >
+
+  <div>
+
+       <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+           <div class="panel panel-info"  style="box-shadow: 0 1px 28px rgba(0,0,0,.5);">
+                   <div class="panel-heading">
+                       <div class="panel-title">Product Details</div>
+                       <div style="float:right; font-size: 80%; position: relative; top:-10px">
+                       </div>
+                   </div>
+
+                   <div style="padding-top:30px" class="panel-body">
+
+                       <form id="sform" name="mame1" class="form-horizontal" role="form" ng-submit="submitForm() && mame1.$valid">
+
+                         <div class="form-group" >
+							<label for="inputproductName" class="col-md-3 control-label">Product Name</label>
+							<div class="col-md-9">
+								<input ng-model="prodname" type="text" class="form-control" placeholder="Input Product Name" />
+							</div>
+							<br>
+                          </div>
+
+                  
+                          <div class="form-group">
+                            <label for="sel1" class="col-md-3 control-label">Select Category:</label>
+                            <div class="col-md-9">
+                              <select ng-model="category" class="form-control" id="sel1" >
+                                <option>Electronics</option>
+                              </select>
+                            </div>
+                              <br>
+                          </div>
+                        
+
+                          <div class="form-group">
+                            <label for="sel2" class="col-md-3 control-label">Sub-category:</label>
+                              <div class="col-md-9">
+                              <select ng-model="subcategory" class="form-control" id="sel2" >
+                                <option><a href="#">Laptops</a></option>
+                                <option><a href="#">TV</a></option>
+                                <option><a href="#">Mobile</a></option>
+                              </select>
+                            </div>
+                              <br>
+                          </div>
+
+
+                          <div class="form-group" >
+							<label for="inputproductName" class="col-md-3 control-label">
+								Brand
+							</label>
+							<div class="col-md-9">
+								<input ng-model="attr1" type="product name" class="form-control" placeholder="Input Brand">
+							</div>
+							<br>
+                          </div>
+
+                          <div class="form-group" >
+                          <label for="inputproductName" class="col-md-3 control-label">
+                            OS
+                          </label>
+                          <div class="col-md-9">
+                            <input ng-model="attr2" type="product name" class="form-control" placeholder="Input OS">
+                          </div>
+                          <br>
+                          </div>
+
+                          <div class="form-group" >
+                          <label for="inputproductName" class="col-md-3 control-label">
+                            Colour
+                          </label>
+                          <div class="col-md-9">
+                            <input ng-model="attr3" type="product name" class="form-control" placeholder="Input Colour">
+                          </div>
+                          <br>
+                          </div>
+
+                          <div class="form-group" >
+                          <label for="inputproductName" class="col-md-3 control-label">
+                            Screen Size
+                          </label>
+                          <div class="col-md-9">
+                            <input ng-model="attr4" type="product name" class="form-control" placeholder="Input Screen Size">
+                          </div>
+                          <br>
+                          </div>
+
+                          <div class="form-group" >
+                          <label for="inputproductName" class="col-md-3 control-label">
+                            RAM
+                          </label>
+                          <div class="col-md-9">
+                            <input ng-model="attr5" type="product name" class="form-control" placeholder="Input RAM">
+                          </div>
+                          <br>
+                          </div>
+                          <div class="col-md-offset-5 col-md-4">
+                          <button type="submit" class="btn btn-success btn-lgbtn-block">Submit
+                          </button>
+                        </div>
+                        </form>
+
+                   </div>
+             </div>       
+        </div>
+  </div> <!--ngcontroller-->
+
+</body>
+</html>

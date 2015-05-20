@@ -1,0 +1,25 @@
+<div id="container">
+<div>
+  <img ng-src="http://localhost:8080/biskart/img/{{data.imgUrl}}" class="col-md-4" id="1" style="height:400px;" align="left" />
+</div>
+  <div class="col-xs-6 col-md-5">
+  <h1>{{data.name}}<br><small>Category: {{data.category}}</small></h1>
+    Ratings-{{data.rating}}
+   <br><br>
+   <div class="panel panel-default" >
+   <div class="panel-heading">Seller List</div>
+   <table class="table">
+     <tr>
+    <th>Seller</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  <tr ng-repeat="row in data.sellerList">
+    <td>{{row.seller}}</td>
+    <td>Rs.{{row.price}}</td>
+    <td style="text-align:center;"><button ng-click="addcart(data.name,row.seller,row.price,data.img)" class="btn btn-primary">Add to Cart</button></td>
+  </tr>
+   </table>
+ </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div id="container">
+<div class="col-xs-6 col-md-2 well" id="navpane">
+      <h5>Sort by-</h5>
+    <ul class="list-group ">
+  <li class="list-group-item"><input type="checkbox" />  0-1,999</li>
+  <li class="list-group-item"><input type="checkbox" />  1,999-3000</li>
+  <li class="list-group-item"><input type="checkbox" />  3000-5000</li>
+  <li class="list-group-item"><input type="checkbox" />  5000-8000</li>
+</ul>
+  </div>
+<div class="row">
+    
+
+  <div class="col-xs-6 col-md-3" ng-repeat="product in products">
+    <a ng-click="details(product.pid)" class="thumbnail">
+      <img ng-src="http://localhost:8080/biskart/img/{{product.imgUrl}}" id="1" style="height:200px;"  />
+      <div class="caption">
+        <h4 style="text-align:center;">{{product.name}}</h4>
+        <p></p>
+        
+      </div>
+    </a>
+  </div>
+
+  
+
+  
+</div>
+</div>

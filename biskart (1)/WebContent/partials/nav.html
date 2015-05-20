@@ -1,0 +1,81 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="margin-top:10px;font-weight:bold;font-family:'Ubuntu';" href="#/">BIS-Proto</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="margin-top:10px;font-weight:bold;">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Groceries</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" style="margin-top:17px;font-weight:bold;" role="search">
+        <div class="form-group">
+          <input type="text" ng-model="searchText" class="form-control col-lg-offset-4 col-lg-4" placeholder="Search" />
+        </div>
+        <button ng-click="search()" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li style="margin-top:10px;font-weight:bold;"><a href="partials/slrlogin.html">Sell</a></li>
+        <li ng-show="logged==0" style="margin-top:10px;font-weight:bold;"><a  href="" data-toggle="modal" data-target="#logsignform" >Login/Signup</a></li>
+        <li class="dropdown" ng-show="logged==1">
+          <a class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-expanded="false">Hello {{name}}<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a ng-click="logout()">Logout</a></li>
+          </ul>
+        </li>
+        <li><a href="" ng-click="showcrt();" ><img src="img/cart.png" style="width:40px;height:40px;" />Cart &nbsp<span id="numcart" class="badge"> {{count}}</span></a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+  <div id="cart" class="col-md-offset-8 col-md-4">
+    <div class="panel-heading" style="font-size:18px;"><strong>Your cart</strong><span id="closecart" ng-click="hidecart()" class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+          <div ng-repeat="obj in cartdata">
+              <div style="border:0.5px solid #cecece;padding-top:12px;padding-left:9.5px;margin-top:4px;" class="media">
+                <div class="media-left">
+                    <img class="media-object" style="width:80px;height:80px;" ng-src="{{obj.img}}" />
+                  
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">{{obj.heading}}</h4>
+                  <h5>Seller:{{obj.seller}}</h5>
+                  <h5>Price:{{obj.price}}</h5>
+                  <hr/>
+                  
+                </div>
+              </div>
+          </div>
+          <h4 class="well">Total:Rs.{{cart_amt}}<a href="#/checkout" > <button style="float:right;margin-top:-6px;" class="btn btn-primary">Checkout</button></a></h4>
+        </div>
+</nav>
+
+<div class="modal fade" id="logsignform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login/Signup</h4>
+      </div>
+      <div class="modal-body">
+      <login-signup></login-signup>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+body {
+    font-family: 'Ubuntu';
+}
+#navpane {
+	height:100vh;
+	
+}
+
+#cart {
+	position:absolute;
+	z-index:10;
+	background-color: #fff;
+	border:1px solid black;
+}
+
+#container {
+	position:relative;
+}
+
+#closecart {
+	float:right;
+	cursor:pointer;
+	font-size: 18px;
+}
+
+.ng-invalid.ng-touched {
+	border: 1px solid red;
+}
+
+
+
+#footers {
+
+    background-color: #F2F2F2;
+    color: #777;
+    padding: 20px;
+
+}
